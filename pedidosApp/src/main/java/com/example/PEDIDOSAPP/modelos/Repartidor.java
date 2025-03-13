@@ -16,7 +16,7 @@ public class Repartidor {
     @Column(name = "telefono", length = 20, nullable = false)
     private String telefono;
 
-    @Column(name = "correo", length = 150, unique = true,nullable = false)
+    @Column(name = "correo_electronico", length = 150, unique = true,nullable = false)
     private String correo;
 
     @Column(name = "vehiculo", length = 50, nullable = false)

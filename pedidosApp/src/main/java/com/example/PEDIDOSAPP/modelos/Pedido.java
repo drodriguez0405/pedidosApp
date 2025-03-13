@@ -1,7 +1,10 @@
 package com.example.PEDIDOSAPP.modelos;
 
 import com.example.PEDIDOSAPP.ayudas.enums.PedidoEnum;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity
 @Table(name = "pedido_tabla")
@@ -19,6 +22,16 @@ public class Pedido {
 
     @Column(name = "estado", columnDefinition = "ENUM('pendiente', 'en camino', 'entregado') DEFAULT 'pendiente'")
     private PedidoEnum estado;
+
+    @ManyToOne
+    @JoinColumn(name = "fk_usuario", referencedColumnName = "id_usuario")
+    @JsonBackReference
+    private Usuario usuario;
+
+    @ManyToOne
+    @JoinColumn(name = "fk_pago", referencedColumnName = "id_pago")
+    @JsonBackReference
+    private Pago pago;
 
     public Pedido() {
     }
