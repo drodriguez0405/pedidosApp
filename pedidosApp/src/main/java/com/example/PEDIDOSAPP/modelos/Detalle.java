@@ -1,6 +1,10 @@
 package com.example.PEDIDOSAPP.modelos;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity
 @Table(name="detalle_tabla")
@@ -16,6 +20,10 @@ public class Detalle {
     @Column(name = "subtotal",precision = 10,scale = 2,nullable = false)
     private double subtotal;
 
+    @OneToMany(mappedBy = "detalle")
+    @JsonManagedReference
+    private List<Detalle> detalles;
+    
 
     public Detalle() {
     }

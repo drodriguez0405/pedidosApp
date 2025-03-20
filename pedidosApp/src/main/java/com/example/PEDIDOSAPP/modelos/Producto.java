@@ -19,6 +19,7 @@ public class Producto {
     @Column(name = "descripcion",length = 200, nullable = false)
     private String descripcion;
 
+
     public Producto() {
     }
 

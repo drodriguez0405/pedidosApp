@@ -1,6 +1,7 @@
 package com.example.PEDIDOSAPP.modelos;
 
 import com.example.PEDIDOSAPP.ayudas.enums.UsuarioEnum;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 

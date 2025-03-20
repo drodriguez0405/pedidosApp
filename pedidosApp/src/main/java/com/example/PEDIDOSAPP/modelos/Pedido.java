@@ -2,6 +2,7 @@ package com.example.PEDIDOSAPP.modelos;
 
 import com.example.PEDIDOSAPP.ayudas.enums.PedidoEnum;
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 
 import java.util.List;
@@ -32,6 +33,18 @@ public class Pedido {
     @JoinColumn(name = "fk_pago", referencedColumnName = "id_pago")
     @JsonBackReference
     private Pago pago;
+
+    @ManyToOne
+    @JoinColumn(name = "fk_tienda", referencedColumnName = "id_tienda")
+    @JsonBackReference
+    private Tienda tienda;
+
+    @ManyToOne
+    @JoinColumn(name = "fk_detalle", referencedColumnName = "id_detalle")
+    @JsonBackReference
+    private Detalle detalle;
+
+
 
     public Pedido() {
     }

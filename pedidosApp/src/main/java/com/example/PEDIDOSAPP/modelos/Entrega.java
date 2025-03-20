@@ -1,6 +1,7 @@
 package com.example.PEDIDOSAPP.modelos;
 
 import com.example.PEDIDOSAPP.ayudas.enums.EntregaEstadoEnum;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 
 @Entity
@@ -17,6 +18,10 @@ public class Entrega {
     @Column(name = "estado_entrega", columnDefinition =  "ENUM('asignado', 'en camino', 'entregado') DEFAULT 'asignado'")
     private EntregaEstadoEnum estadoEntrega;
 
+    @ManyToOne
+    @JoinColumn(name = "fk_entrega", referencedColumnName = "id_entrega")
+    @JsonBackReference
+    private Entrega entrega;
 
     public Entrega() {
     }
