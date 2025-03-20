@@ -22,7 +22,7 @@ public class Detalle {
 
     @OneToMany(mappedBy = "detalle")
     @JsonManagedReference
-    private List<Detalle> detalles;
+    private List<Pedido> pedidos;
     
 
     public Detalle() {

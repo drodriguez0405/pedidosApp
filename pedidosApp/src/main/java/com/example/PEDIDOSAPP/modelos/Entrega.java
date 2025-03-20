@@ -19,9 +19,9 @@ public class Entrega {
     private EntregaEstadoEnum estadoEntrega;
 
     @ManyToOne
-    @JoinColumn(name = "fk_entrega", referencedColumnName = "id_entrega")
+    @JoinColumn(name = "fk_repartidor", referencedColumnName = "id_repartidor")
     @JsonBackReference
-    private Entrega entrega;
+    private Repartidor repartidor;
 
     public Entrega() {
     }
